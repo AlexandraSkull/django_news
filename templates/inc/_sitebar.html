@@ -1,0 +1,28 @@
+{% load news_tags %}
+
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        Category
+    </div>
+    <ul class="list-group list-group-flush">
+
+        {% get_categories as categories %}
+        {% for elem in categories %}
+            <li><a class="list-group-item list-group-item-action" href='{{ elem.get_absolute_url }}'>{{ elem.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div> 
+
+<!-- what I wanted to implement, but it didn't work out -->
+<!-- 
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+      Sorted
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Title</li>
+      <li class="list-group-item">Created at</li>
+      <li class="list-group-item">Updated at</li>
+      <li class="list-group-item">Watch users</li>
+    </ul>
+</div>  -->
